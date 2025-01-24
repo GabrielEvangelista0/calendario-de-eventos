@@ -1,0 +1,33 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu ul li a:hover{
+    color: #f1356d;
+}
+
+.entrar{
+    border: 1px solid #f1356d;
+    padding: .5rem;
+    border-radius: 5px;
+}

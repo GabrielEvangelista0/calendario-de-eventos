@@ -1,0 +1,32 @@
+.eventos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    padding: 0rem 3rem;
+}
+
+.eventos h2{
+    text-align: start;
+}
+
+.criarEvento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.botao{
+    border: 1px solid #f1356d;
+    padding: .5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    
+}
+
+.botao:hover{
+    background-color: #f1356d;
+    color: white;
+}
