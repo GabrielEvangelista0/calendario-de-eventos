@@ -7,9 +7,8 @@ import Link from 'next/link';
 export default function Page() {
     return (
         <div className={styles.page}>
-            <Menu />
             <section className={style.criarEvento}> 
-                <Link className={style.botao} href="/eventos/">
+                <Link className={style.botao} href="/criarEvento/">
                     Criar evento
                 </Link>
             </section>

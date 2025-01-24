@@ -27,6 +27,35 @@ a {
   text-decoration: none;
 }
 
+button{
+  background-color: var(--background);
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--primary);
+  padding: .5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  color: var(--primary);
+  transition-duration: 300ms;
+}
+
+button:hover{
+  background-color: var(--primary);
+  color: white;
+}
+
+input{
+  background-color: transparent;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+textarea{
+  background-color: transparent;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

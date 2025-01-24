@@ -1,0 +1,49 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form input{
+    width: 30%;
+    background-color: transparent;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary);
+}
+
+.form input::placeholder{
+    color: var(--primary);
+}
+
+.form input:focus{
+    outline: none;
+    border: 1px solid var(--primary);
+}
+
+.form textarea{
+    width: 30%;
+    background-color: transparent;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+}
+
+.form textarea::placeholder{
+    color: var(--primary);
+}
+
+.form textarea:focus{
+    outline: none;
+    border: 1px solid var(--primary);
+}
+
+.form button{
+    margin: 1rem;
+}
