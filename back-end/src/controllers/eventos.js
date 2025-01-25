@@ -20,9 +20,9 @@ export const getEventoById = async (req, res, next) => {
 }
 
 export const createEvento = async (req, res, next) => {
-    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, responsavel } = req.body;
+    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao } = req.body;
     try {
-        const evento = await EventoModel.create({ nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, responsavel });
+        const evento = await EventoModel.create({ nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao });
         res.status(201).json({ message: 'Evento created successfully', evento });
     } catch (error) {
         next(error);
@@ -31,9 +31,9 @@ export const createEvento = async (req, res, next) => {
 
 export const updateEvento = async (req, res, next) => {
     const { id } = req.params;
-    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, responsavel } = req.body;
+    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao } = req.body;
     try {
-        const evento = await EventoModel.findByIdAndUpdate(id, { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, responsavel }, { new: true }).exec();
+        const evento = await EventoModel.findByIdAndUpdate(id, { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao }, { new: true }).exec();
         res.status(200).json({ message: 'Evento updated successfully', evento });
     } catch (error) {
         next(error);
@@ -49,3 +49,15 @@ export const deleteEvento = async (req, res, next) => {
         next(error);
     }
 }
+
+/*
+{
+    "userName": "evento10",
+    "dataInicio": "21/02/2025",
+    "dataFim": "22/02/2025",
+    "horaInicio": "12:00",
+    "horaFim": "15:00",
+    "local": "rua 401",
+    "descricao": "teste"
+}
+*/

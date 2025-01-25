@@ -29,10 +29,6 @@ const eventoSchema = new Schema({
         type: String,
         required: true
     },
-    responsavel: {
-        type: String,
-        required: true
-    },
 });
 
 
