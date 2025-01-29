@@ -1,13 +1,15 @@
 import styles from './cardEvento.module.css';
 
-export default function CardEvento({ evento }) {
+export default function CardEvento({ titulo, descricao, endereco, inicia, termina, das, ate }) {
   return (
     <div className={styles.cardEvento}>
-      <h3>{evento.titulo}</h3>
-      <p>{evento.descripcion}</p>
-      <p>{evento.endereco}</p>
-      <p>{evento.abre}</p>
-      <p>{evento.fecha}</p>
+      <h3>{titulo}</h3>
+      <div className={styles.cerdEvento_informaçoes}>
+        <p>Inicia: {inicia}</p>
+        <p>Termina: {termina}</p>
+        <p>Das: {das}</p>
+        <p>Ate: {ate}</p>
+      </div>
     </div>
   );
 }

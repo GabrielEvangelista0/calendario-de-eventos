@@ -21,6 +21,9 @@ export const getEventoById = async (req, res, next) => {
 
 export const createEvento = async (req, res, next) => {
     const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao } = req.body;
+    if (!nome || !dataInicio || !dataFim || !horaInicio || !horaFim || !local || !descricao) {
+        return res.status(400).json({ message: 'Todos os campos devem ser preenchidos' });
+    }
     try {
         const evento = await EventoModel.create({ nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao });
         res.status(201).json({ message: 'Evento created successfully', evento });

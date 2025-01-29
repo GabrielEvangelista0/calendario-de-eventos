@@ -1,8 +1,4 @@
-.eventos{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+.eventos {
     width: 90%;
     padding: 0rem 3rem;
     background-color: #ffff;
@@ -10,30 +6,42 @@
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-.eventos h2{
+.lista_eventos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.eventos h2 {
     text-align: start;
 }
 
-.criarEvento{
+.criarEvento {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
     padding: .5rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: #ffff ;
+    background-color: #ffff;
     width: 100%;
 }
 
-.botao{
+.botao {
     border: 1px solid var(--primary);
     padding: .5rem;
     font-size: 1.5rem;
     border-radius: 5px;
-    
+
 }
 
-.botao:hover{
+.botao:hover {
     background-color: var(--primary);
     color: white;
+}
+
+.lista_eventos a {
+    min-height: 0%;
+    padding: 0;
 }

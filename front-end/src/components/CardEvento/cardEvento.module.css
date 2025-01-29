@@ -1,8 +1,5 @@
 .cardEvento{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
+    width: 70%;
     height: 100%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
@@ -10,8 +7,11 @@
     padding: 10px;
     margin: 10px;
     border: 1px solid var(--primary);
-    min-height: 20vh;
     cursor: pointer;
+}
+
+.cardEvento h3{
+    text-transform: uppercase;
 }
 
 .cardEvento:hover{
@@ -20,4 +20,10 @@
 
 .cardEvento:hover h3{
     color: var(--primary);
+}
+
+.cerdEvento_informaçoes{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
 }
