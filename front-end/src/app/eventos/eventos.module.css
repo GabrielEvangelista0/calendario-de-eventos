@@ -17,30 +17,6 @@
     text-align: start;
 }
 
-.criarEvento {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
-    padding: .5rem;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    background-color: #ffff;
-    width: 100%;
-}
-
-.botao {
-    border: 1px solid var(--primary);
-    padding: .5rem;
-    font-size: 1.5rem;
-    border-radius: 5px;
-
-}
-
-.botao:hover {
-    background-color: var(--primary);
-    color: white;
-}
-
 .lista_eventos a {
     min-height: 0%;
     padding: 0;

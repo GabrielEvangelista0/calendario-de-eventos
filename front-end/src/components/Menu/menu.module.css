@@ -31,3 +31,15 @@
     padding: .5rem;
     border-radius: 5px;
 }
+
+.infoUsuario{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.infoUsuario p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary);
+}

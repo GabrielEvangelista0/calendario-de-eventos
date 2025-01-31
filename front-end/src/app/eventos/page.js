@@ -2,7 +2,7 @@ import pageStyle from '@/styles/page.module.css';
 import style from "@/app/eventos/eventos.module.css";
 import CardEvento from '@/components/CardEvento/cardEvento';
 import Link from 'next/link';
-import { getData } from '@/utils/crud';
+import { getData } from '@/lib/eventosCRUD';
 
 export default async function Page() {
     const dados = await getData("http://localhost:5000/api/eventos");
@@ -10,11 +10,6 @@ export default async function Page() {
 
     return (
         <div className={pageStyle.page}>
-            <section className={style.criarEvento}>
-                <Link className={style.botao} href="/criarEvento/">
-                    Criar evento
-                </Link>
-            </section>
             <section className={style.eventos}>
                 <h2>Lista de eventos</h2>
                 <div className={style.lista_eventos}>

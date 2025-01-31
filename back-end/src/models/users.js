@@ -23,7 +23,7 @@ const userSchema = new Schema({
             ref: 'Evento',
         }
     ],
-    eventoQuereParticipar: [
+    eventosQuerParticipar: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Evento',

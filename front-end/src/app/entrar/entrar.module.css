@@ -38,3 +38,9 @@
 .forms{
     width: 100%;
 }
+
+.message{
+    padding: 1rem;
+    color: var(--primary); 
+    text-align: center;  
+}

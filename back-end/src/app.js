@@ -2,46 +2,29 @@ import express from "express";
 import "dotenv/config";
 import eventosRouter from "../src/routes/eventos.js";
 import usersRouter from "../src/routes/users.js";
-import session from "express-session";
-import mongoStore from "connect-mongo";
 import cors from "cors";
 
 const app = express();
-//acitar json
+
 app.use(express.json());
 
 app.use(cors({
     origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        maxAge: 24 * 60 * 60 * 1000
-    },
-    rolling: true,
-    store: mongoStore.create({
-        mongoUrl: process.env.mongo_conection_string
-    })
-}))
+app.use("/api/eventos", eventosRouter);
+app.use("/api/users", usersRouter);
 
-// Middleware para lidar com requisições
-app.use("/api/eventos",eventosRouter);
-app.use("/api/users",usersRouter);
-
-// Middleware para lidar com erros
+// Middleware para rotas não encontradas
 app.use((req, res, next) => {
-    next(new Error("Endpoint Not Found"));
-})
-// Middleware para lidar com erros
+    res.status(404).json({ error: "Endpoint Not Found" });
+});
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    let errorMesage = "An error occurred";
-    if (errorMesage instanceof Error) errorMesage = errorMesage.message;
-    res.status(500).json({ error: errorMesage });
-})
+    res.status(500).json({ error: err.message || "An error occurred" });
+});
 
 export default app;

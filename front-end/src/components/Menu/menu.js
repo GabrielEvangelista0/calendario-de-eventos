@@ -1,14 +1,30 @@
-import React from 'react';
+"use client";
+
 import Link from 'next/link';
 import styles from '@/components/Menu/menu.module.css';
+import { deslogarUsuario } from '@/lib/userLogin';
 
-export default function Menu (){
+export default function Menu({ userName }) {
     return (
         <nav className={styles.menu}>
             <ul>
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/eventos">Eventos</Link></li>
-                <li><Link className={styles.entrar} href="/entrar">Entrar</Link></li>
+                <li>
+                    {
+                        userName == "" ? (
+                            <Link className={styles.entrar} href="/entrar">Entrar</Link>
+                        ) :
+                            (
+                                <form className={styles.infoUsuario} onSubmit={() => {
+                                    deslogarUsuario();
+                                }}>
+                                    <p>{userName}</p>
+                                    <button>Sair</button>
+                                </form>
+                            )
+                    }
+                </li>
             </ul>
         </nav>
     );

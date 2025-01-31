@@ -29,6 +29,11 @@ const eventoSchema = new Schema({
         type: String,
         required: true
     },
+    criador: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
 });
 
 

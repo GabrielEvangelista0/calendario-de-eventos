@@ -19,13 +19,23 @@ export const getEventoById = async (req, res, next) => {
     }
 }
 
+export const getEventoosByCriador = async (req, res, next) => {
+    const { criador } = req.params;
+    try {
+        const eventos = await EventoModel.find({ criador }).exec();
+        res.status(200).json(eventos);
+    } catch (error) {
+        next(error);
+    }
+}
+
 export const createEvento = async (req, res, next) => {
-    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao } = req.body;
-    if (!nome || !dataInicio || !dataFim || !horaInicio || !horaFim || !local || !descricao) {
+    const { nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, criador } = req.body;
+    if (!nome || !dataInicio || !dataFim || !horaInicio || !horaFim || !local || !descricao, !criador) {
         return res.status(400).json({ message: 'Todos os campos devem ser preenchidos' });
     }
     try {
-        const evento = await EventoModel.create({ nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao });
+        const evento = await EventoModel.create({ nome, dataInicio, dataFim, horaInicio, horaFim, local, descricao, criador });
         res.status(201).json({ message: 'Evento created successfully', evento });
     } catch (error) {
         next(error);

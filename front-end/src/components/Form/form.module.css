@@ -47,3 +47,8 @@
 .form button{
     margin: 1rem;
 }
+
+.form_botoes{
+    display: flex;
+    justify-content: center;
+}

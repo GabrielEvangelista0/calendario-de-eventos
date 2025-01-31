@@ -43,3 +43,30 @@ export async function postData(url, data) {
     const dados = await response.json();
     return dados;
 }
+
+export async function putData(url, id, data) {
+    if (!data) {
+        throw new Error("Data is empty");
+    }
+    const response = await fetch(`${url}/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    const dados = await response.json();
+    return dados;
+}
+
+export async function deleteData(url, id) {
+    const response = await fetch(`${url}/${id}`, {
+        method: 'DELETE'
+    });
+    const dados = await response.json();
+    return dados;
+}
+
+export async function getEventoByCreatorId(creatorId) {
+    const response = await fetch(`http://localhost:5000/api/eventos/criador/${creatorId}`);
+    const dados = await response.json();
+    return dados;
+}
