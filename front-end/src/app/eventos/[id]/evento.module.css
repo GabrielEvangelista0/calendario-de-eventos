@@ -57,4 +57,20 @@
 .editar:hover {
     background-color: var(--primary);
     color: white;
-}   
+}
+
+@media screen and (max-width: 600px) {
+    .cabecalho h1{
+        font-size: 1rem;
+    }
+    .informacoes{
+        align-items: flex-start;
+    }
+    .informacoes_data{
+        flex-direction: column;
+    }
+
+    .botoes{
+        margin-bottom: 2rem;
+    }
+}

@@ -41,4 +41,16 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.sair{
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .lista_eventos ul{
+        justify-content: center;
+        flex-direction: column;
+    }
 }

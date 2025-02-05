@@ -7,6 +7,7 @@ import CardEvento from "@/components/CardEvento/cardEvento";
 import { getEventosQueroParticipar, pegarUsuarioLogado } from "@/lib/userLogin.js";
 import Link from "next/link";
 import { getEventoByCreatorId } from "@/lib/eventosCRUD";
+import BotaoSair from "@/components/Botoes/botaoSair";
 
 export default async function Home() {
   const cookie = cookies();
@@ -23,7 +24,6 @@ export default async function Home() {
     eventosCriados = await getEventoByCreatorId(dados._id);
     queroParticipar = await getEventosQueroParticipar(token, dados._id);
   }
-  console.log(queroParticipar);
 
   return (
     <div className={pageStyles.page}>
@@ -73,6 +73,9 @@ export default async function Home() {
             }) : <p>Nemhum evento salvo</p>}
           </ul>
         </div>
+      </section>
+      <section className={styles.sair}>
+        <BotaoSair/>
       </section>
     </div>
   );

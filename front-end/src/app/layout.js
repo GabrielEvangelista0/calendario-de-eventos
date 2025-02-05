@@ -3,6 +3,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google";
 import { cookies } from "next/headers";
 import { pegarUsuarioLogado } from "@/lib/userLogin.js";
+import { Footer } from "@/components/Footer/footer";
 
 const fonts = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -22,8 +23,9 @@ export default async function RootLayout({ children }) {
     }else{
       token = cookie.get('token').value;
       dados = await pegarUsuarioLogado(token);
-      userName = dados.name
+      userName = dados.userName
     }
+    
   return (
     <html lang="en">
       <body className={fonts}>
@@ -31,6 +33,7 @@ export default async function RootLayout({ children }) {
           userName={userName}
         />
         {children}
+        <Footer/>
       </body>
     </html>
   );

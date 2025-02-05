@@ -17,7 +17,7 @@ export default function Page() {
             setUsuario(data);
         }
         fetchData();
-    },[])
+    }, [])
     //Lida com a mudança de valores nos inputs
     function handleChange(e) {
         const { id, value } = e.target
@@ -27,28 +27,27 @@ export default function Page() {
     //Lida com o envio do formulário
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(postData("http://localhost:5000/api/eventos", {...values, criador: usuario._id}));
+        console.log(postData("http://localhost:5000/api/eventos", { ...values, criador: usuario._id }));
     }
     return (
         <div className={pageStyle.page}>
             <h1>Criar Evento</h1>
-            <div className={styles.criarEvento}>
-                {usuario == undefined ? <p>Carregando...</p> : 
-                <FormCriarEvento 
-                handleChange={handleChange} 
-                handleSubmit={handleSubmit}
-                nome="Nome do Evento"
-                dataInicio="Data de inicio"
-                dataFim="Data de termino"
-                horaInicio="Hora de inicio"
-                horaFim="Hora de termino"
-                local="Local"
-                descricao="Descricao"
-                />}
-            </div>
-            <div className={styles.criarEvento}>
-                {usuario == undefined ? <p>Carregando...</p> : <p>Usuario: {usuario._id}</p>}
-            </div>
+            {usuario == undefined ? <p>Carregando...</p> : (
+                <div className={styles.criarEvento}>
+                    {usuario == undefined ? <p>Carregando...</p> :
+                        <FormCriarEvento
+                            handleChange={handleChange}
+                            handleSubmit={handleSubmit}
+                            nome="Nome do Evento"
+                            dataInicio="Data de inicio"
+                            dataFim="Data de termino"
+                            horaInicio="Hora de inicio"
+                            horaFim="Hora de termino"
+                            local="Local"
+                            descricao="Descricao"
+                        />}
+                </div>
+            )}
         </div>
     );
 }

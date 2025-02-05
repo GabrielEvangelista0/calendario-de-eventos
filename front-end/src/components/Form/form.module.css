@@ -4,11 +4,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    padding: 1rem;
     width: 100%;
 }
 
 .form input{
-    width: 30%;
+    width: 70%;
     background-color: transparent;
     padding: 10px;
     margin: 10px;
@@ -27,7 +28,8 @@
 }
 
 .form textarea{
-    width: 30%;
+    width: 50%;
+    min-height: 150px;
     background-color: transparent;
     padding: 10px;
     margin: 10px;
@@ -51,4 +53,14 @@
 .form_botoes{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    .form input{
+        width: 100%;
+    }
+
+    .form textarea{
+        width: 100%;
+    }
 }
