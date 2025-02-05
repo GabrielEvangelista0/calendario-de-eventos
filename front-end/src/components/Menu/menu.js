@@ -11,19 +11,7 @@ export default function Menu({ userName }) {
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/eventos">Eventos</Link></li>
                 <li>
-                    {
-                        userName == "" ? (
-                            <Link className={styles.entrar} href="/entrar">Entrar</Link>
-                        ) :
-                            (
-                                <form className={styles.infoUsuario} onSubmit={() => {
-                                    deslogarUsuario();
-                                }}>
-                                    <p>{userName}</p>
-                                    <button>Sair</button>
-                                </form>
-                            )
-                    }
+                    {userName == "" ? (<Link className={styles.entrar} href="/entrar">Entrar</Link>) : (<p>{userName}</p>)}
                 </li>
             </ul>
         </nav>
