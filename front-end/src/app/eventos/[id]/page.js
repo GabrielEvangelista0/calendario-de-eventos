@@ -8,13 +8,9 @@ import BotaoSalvarEvento from "@/components/Botoes/botaoSalvar";
 
 export default async function Page({ params }) {
     const id = params.id;
-    const dados = await getDataFromId("http://localhost:5000/api/eventos", id);
+    const dados = await getDataFromId(id);
     const tokenCookie = await cookies().get("token");
     const token = tokenCookie ? tokenCookie.value : null; // Verifica se o token existe
-
-    if (!token) {
-        return <p>Erro: Token não encontrado.</p>;
-    }
 
     const usuario = await pegarUsuarioLogado(token);
     

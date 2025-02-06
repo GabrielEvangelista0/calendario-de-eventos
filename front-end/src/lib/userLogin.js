@@ -101,5 +101,4 @@ export async function getEventosQueroParticipar(token, usuarioId) {
 
 export async function deslogarUsuario(){
     Cookies.remove('token');
-    redirect('/eventos');
 } 

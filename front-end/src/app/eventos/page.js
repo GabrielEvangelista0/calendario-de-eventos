@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { getData } from '@/lib/eventosCRUD';
 
 export default async function Page() {
-    const dados = await getData("http://localhost:5000/api/eventos");
-    console.log(dados);
+    const dados = await getData();
 
     return (
         <div className={pageStyle.page}>

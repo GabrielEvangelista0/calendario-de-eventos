@@ -37,7 +37,7 @@ export const loginUser = async (req, res, next) => {
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(401).json({ message: 'Senha inválida' });
+            return res.status(401).json({ message: 'Usuario ou Senha inválida' });
         }
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
@@ -67,8 +67,6 @@ export const autenticarJWT = (req, res, next) => {
 
 
 export const getAuthenticatedUser = async (req, res, next) => {
-    console.log(req.user.id);
-    
     try {
         if (!req.user || !req.user.id) {
             return res.status(401).json({ message: "Usuário não autenticado" });

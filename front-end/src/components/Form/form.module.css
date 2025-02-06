@@ -18,6 +18,10 @@
     border: 1px solid var(--primary);
 }
 
+.form label{
+    color: var(--primary);
+}
+
 .form input::placeholder{
     color: var(--primary);
 }

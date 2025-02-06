@@ -16,7 +16,6 @@ export default async function Home() {
   let eventosCriados = [];
   let queroParticipar = [];
   if (cookie.get('token') === undefined) {
-    console.log('Token nao encontrado');
     redirect('/entrar');
   } else {
     token = cookie.get('token').value;

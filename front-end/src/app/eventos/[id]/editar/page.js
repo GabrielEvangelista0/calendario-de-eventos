@@ -11,7 +11,7 @@ export default function Page({ params }) {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getDataFromId("http://localhost:5000/api/eventos", params.id);
+            const data = await getDataFromId(params.id);
             setValues(data);
         }
         fetchData();

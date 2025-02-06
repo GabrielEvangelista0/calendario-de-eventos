@@ -32,12 +32,11 @@ export default function Page() {
             const response = await logarUsuario(values);
             if (response) {
                 setMessage(response.message);
+            }
+            if (response.message == 'User logged in successfully') {
                 Cookies.set('token', response.token);
                 router.refresh();
                 router.push('/');
-                console.log(response);
-            } else {
-                console.error("Erro ao entrar");
             }
         } catch (error) {
             setMessage(response.message);
@@ -53,7 +52,6 @@ export default function Page() {
             if (response) {
                 setMessage(response.message);
                 setEntrarCriar("entrar");
-                console.log(response);
             } else {
                 console.error("Erro ao cadastrar usuário");
             }
