@@ -40,7 +40,7 @@ export default function Page() {
             }
         } catch (error) {
             setMessage(response.message);
-            console.error("Erro ao entrar:", error);
+            
         }
     }
 
@@ -52,8 +52,6 @@ export default function Page() {
             if (response) {
                 setMessage(response.message);
                 setEntrarCriar("entrar");
-            } else {
-                console.error("Erro ao cadastrar usuário");
             }
         } catch (error) {
             setMessage(response.message);
