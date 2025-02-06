@@ -58,7 +58,6 @@ export async function putEventosQueroParticipar(token, usuarioId, eventos) {
     if (!usuarioId || !eventos) {
         throw new Error("Usuário ID e eventos são obrigatórios");
     }
-
     const response = await fetch(`http://localhost:5000/api/users/${usuarioId}/eventos`, {
         method: "PUT",
         headers: {

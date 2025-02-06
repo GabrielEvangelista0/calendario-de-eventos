@@ -23,6 +23,7 @@ export default async function Home() {
     eventosCriados = await getEventoByCreatorId(dados._id);
     queroParticipar = await getEventosQueroParticipar(token, dados._id);
   }
+  console.log(queroParticipar);
 
   return (
     <div className={pageStyles.page}>
@@ -39,14 +40,16 @@ export default async function Home() {
             {Array.isArray(eventosCriados) ? eventosCriados.map((evento) => {
               return (
                 <li key={evento._id}>
-                  <CardEvento
-                    titulo={evento.nome}
-                    endereco={evento.local}
-                    inicia={evento.dataInicio}
-                    termina={evento.dataFim}
-                    das={evento.horaInicio}
-                    ate={evento.horaFim}
-                  />
+                  <Link href={`/eventos/${evento._id}`}>
+                    <CardEvento
+                      titulo={evento.nome}
+                      endereco={evento.local}
+                      inicia={evento.dataInicio}
+                      termina={evento.dataFim}
+                      das={evento.horaInicio}
+                      ate={evento.horaFim}
+                    />
+                  </Link>
                 </li>
               );
             }) : <p>Nemhum evento criado</p>}
@@ -58,15 +61,16 @@ export default async function Home() {
             {Array.isArray(queroParticipar) ? queroParticipar.map((evento) => {
               return (
                 <li key={evento._id}>
-                  <CardEvento
-                    titulo={evento.nome}
-                    endereco={evento.local}
-                    inicia={evento.dataInicio}
-                    termina={evento.dataFim}
-                    das={evento.horaInicio}
-                    ate={evento.horaFim}
-                  />
-
+                  <Link href={`/eventos/${evento._id}`}>
+                    <CardEvento
+                      titulo={evento.nome}
+                      endereco={evento.local}
+                      inicia={evento.dataInicio}
+                      termina={evento.dataFim}
+                      das={evento.horaInicio}
+                      ate={evento.horaFim}
+                    />
+                  </Link>
                 </li>
               );
             }) : <p>Nemhum evento salvo</p>}
@@ -74,7 +78,7 @@ export default async function Home() {
         </div>
       </section>
       <section className={styles.sair}>
-        <BotaoSair/>
+        <BotaoSair />
       </section>
     </div>
   );
