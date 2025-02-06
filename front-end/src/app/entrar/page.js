@@ -35,8 +35,8 @@ export default function Page() {
             }
             if (response.message == 'User logged in successfully') {
                 Cookies.set('token', response.token);
-                router.refresh();
                 router.push('/');
+                router.refresh();
             }
         } catch (error) {
             setMessage(response.message);

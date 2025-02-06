@@ -40,12 +40,14 @@
 .lista_eventos ul{
     list-style: none;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     padding: 1rem;
 }
 
 .sair{
-    margin-top: 1rem;
+    margin: 1rem;
+
 }
 
 @media screen and (max-width: 1024px) {
